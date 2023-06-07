@@ -1,0 +1,1 @@
+https://priyankab85.medium.com/cheat-sheet-for-karate-assertions-and-matching-d248383546e0
