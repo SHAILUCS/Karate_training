@@ -1,0 +1,9 @@
+{
+	"name" : "apple",
+	"hq": "USA",
+	"products": [
+		"iPhone",
+		"iPad",
+		"Mac"
+	]
+}
