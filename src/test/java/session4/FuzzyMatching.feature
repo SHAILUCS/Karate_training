@@ -37,7 +37,7 @@ Feature:
  		* def isAgeValid = function(a){ return a>0 && a<100 }
  		* match json.age == '#? isAgeValid(_)'
  		# performing run time calculations on the json data
- 		* def json = {cel : 150, far: 302 }
+ 		* def json = {cel : 150, far: 300 }
  		* match json == {cel : '#number', far:'#? _ == $.cel*1.8+32'}
 		 		
  		

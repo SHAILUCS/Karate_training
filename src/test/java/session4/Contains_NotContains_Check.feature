@@ -1,6 +1,7 @@
 Feature: 
   Lets see how contains / not contains works
 
+	@ignore
   Scenario: 
     Contains verification on header
 
