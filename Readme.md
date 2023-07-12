@@ -55,3 +55,113 @@
 # Main source
 
 - https://github.com/karatelabs/karate
+
+
+# Assessment
+
+
+KARATE API TRAINING- ASSESSMENT
+
+1) Check valid login, and verify the status & response
+
+```
+REQUEST >
+curl -X POST 
+  https://restful-booker.herokuapp.com/auth 
+  -H 'Content-Type: application/json' 
+  -d '{
+    "username" : "admin",
+    "password" : "password123"
+}'
+RESPONSE > 
+< 200
+< {
+  "token": "0de4f10282c6a8a"
+}
+```
+2) Check invalid login, and verify the status & response
+
+```
+REQUEST >
+ curl -X POST 
+  https://restful-booker.herokuapp.com/auth 
+  -H 'Content-Type: application/json' 
+  -d '{
+    "username" : "admin1",
+    "password" : "password1234"
+}'
+RESPONSE >
+< 200
+< {
+  "reason": "Bad credentials"
+}
+```
+
+3) Using below requests, perform the below operations
+-> Search all books 
+-> Verify the status & response (Verify the complete json response using "match each" keyword, and also verify that the coverFileName must contains ".jpg")  
+-> From the above response pick first book id and Get that book details 
+-> Verify the status & response (Verify the complete json response using "match ==" keyword, and also verify that the coverFileName must contains ".jpg").
+
+```
+REQUEST > 
+curl -X GET "https://bookcart.azurewebsites.net/api/Book" -H  "accept: application/json"
+RESPONSE >
+< 200
+< [{
+    "coverFileName": "8f5f8b64-794c-4dbb-b369-6cc9cc762ce0HP5.jpg",
+    "author": "JKR",
+    "price": 432.0,
+    "title": "HP5",
+    "category": "Mystery",
+    "bookId": 5
+  },
+  {
+    "coverFileName": "6d91b7b0-b8d1-41ad-a0ef-65e2324fc1b3Slayer.jpg",
+    "author": " Kiersten White",
+    "price": 1234.0,
+    "title": "Slayer",
+    "category": "Mystery",
+    "bookId": 21
+  }]
+REQUEST > 
+curl -X GET "https://bookcart.azurewebsites.net/api/Book/2"
+RESPONSE >
+< 200
+< {
+    "coverFileName": "8f5f8b64-794c-4dbb-b369-6cc9cc762ce0HP5.jpg",
+    "author": "JKR",
+    "price": 432.0,
+    "title": "HP5",
+    "category": "Mystery",
+    "bookId": 5
+  }
+```
+
+4) In below request when you pass a bookId, system will fetch five random books of same category. Verify that the response is returning total 5 books and those 5 books must not contain the passed bookId
+
+```
+REQUEST >
+curl -X GET "https://bookcart.azurewebsites.net/api/Book/GetSimilarBooks/2" -H  "accept: application/json"
+RESPONSE >
+< 200
+< [{
+    "coverFileName": "8f5f8b64-794c-4dbb-b369-6cc9cc762ce0HP5.jpg",
+    "author": "JKR",
+    "price": 432.0,
+    "title": "HP5",
+    "category": "Mystery",
+    "bookId": 5
+  },
+  {
+    "coverFileName": "6d91b7b0-b8d1-41ad-a0ef-65e2324fc1b3Slayer.jpg",
+    "author": " Kiersten White",
+    "price": 1234.0,
+    "title": "Slayer",
+    "category": "Mystery",
+    "bookId": 21
+  }]
+```
+
+5) Run all the tests in parallel, also demonstrate using Tags how you would control that only bookcart.azurewebsites.net tests should be executed on 2 parallel threads
+
