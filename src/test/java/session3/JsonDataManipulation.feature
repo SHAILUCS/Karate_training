@@ -9,11 +9,11 @@ Feature:
       {
       name:"apple",
       hq:'USA',
-      products: ['iPhone','iPad','Mac']
       }
       """
     * set jsonData.token = "tokenValue"
     * set jsonData.name = "Google"
+    * set jsonData.products[] = "iPhone"
     * print jsonData
 
   Scenario: 
