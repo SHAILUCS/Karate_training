@@ -1,17 +1,15 @@
 package session7;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
+import com.intuit.karate.junit5.Karate.Test;
 
 public class TestRunner {
-
-	@BeforeClass
-	public static void before() {
-		System.setProperty("karate.env", "QA");
-	}
+//
+//	@BeforeClass
+//	public static void before() {
+//		System.setProperty("karate.env", "QA");
+//	}
 
 	@Test
 	public void testParallel() {

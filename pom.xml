@@ -9,22 +9,20 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>com.intuit.karate</groupId>
-			<artifactId>karate-core</artifactId>
-			<version>1.0.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.intuit.karate</groupId>
-			<artifactId>karate-junit4</artifactId>
-			<version>1.0.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.intuit.karate</groupId>
-			<artifactId>karate-apache</artifactId>
-			<version>0.9.6</version>
-		</dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-apache</artifactId>
+            <version>0.9.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-junit5</artifactId>
+            <version>1.4.0.RC3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-core</artifactId>
+            <version>1.4.0.RC3</version>
+        </dependency>
 
 
 	</dependencies>
